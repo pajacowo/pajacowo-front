@@ -7,14 +7,14 @@ import { faMasksTheater } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
    return (
-      <AppBar className="bg-white" position="fixed">
+      <AppBar color="primary" position="fixed">
          <Toolbar>
             <FontAwesomeIcon
                icon={faMasksTheater}
-               className="text-black mr-5"
+               className="text-white mr-5"
                size="2x"
             />
-            <Typography className="text-gray-900">Memownia</Typography>
+            <Typography className="text-white">Memownia</Typography>
          </Toolbar>
       </AppBar>
    );
