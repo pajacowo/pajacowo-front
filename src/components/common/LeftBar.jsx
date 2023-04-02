@@ -6,19 +6,25 @@ import { faFireFlameCurved, faImage } from "@fortawesome/free-solid-svg-icons";
 
 const LeftBar = () => {
    return (
-      <Container className="pt-24 h-screen sticky top-0">
-         <div className="flex items-center mb-10">
+      <Container className="pt-28 h-screen sticky top-0">
+         <div className="flex items-center mb-10 pl-5">
             <FontAwesomeIcon
                icon={faFireFlameCurved}
                className="mr-5 text-lg"
             />
-            <Link to="/hot">
+            <Link
+               to="/hot"
+               className="focus:underline focus:underline-offset-8"
+            >
                <Typography>Hot mems</Typography>
             </Link>
          </div>
-         <div className="flex items-center mb-10">
+         <div className="flex items-center mb-10 pl-5">
             <FontAwesomeIcon icon={faImage} className="mr-5 text-lg" />
-            <Link to="/regular">
+            <Link
+               to="/regular"
+               className="focus:underline focus:underline-offset-8"
+            >
                <Typography>Regular</Typography>
             </Link>
          </div>
