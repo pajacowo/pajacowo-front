@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material";
 import { theme } from "./config/theme";
 
+document.body.classList = 'bg-gray-100';
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
    <React.StrictMode>
