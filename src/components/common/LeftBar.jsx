@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Container, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFireFlameCurved, faImage } from "@fortawesome/free-solid-svg-icons";
@@ -12,21 +12,26 @@ const LeftBar = () => {
                icon={faFireFlameCurved}
                className="mr-5 text-lg"
             />
-            <Link
+            <NavLink
                to="/hot"
-               className="focus:underline focus:underline-offset-8"
+               className={({ isActive }) =>
+                  isActive ? "underline underline-offset-8" : ""
+               }
+               activeClassName="text-red-400"
             >
                <Typography>Hot mems</Typography>
-            </Link>
+            </NavLink>
          </div>
          <div className="flex items-center mb-10 pl-5">
             <FontAwesomeIcon icon={faImage} className="mr-5 text-lg" />
-            <Link
+            <NavLink
                to="/regular"
-               className="focus:underline focus:underline-offset-8"
+               className={({ isActive }) =>
+                  isActive ? "underline underline-offset-8" : ""
+               }
             >
                <Typography>Regular</Typography>
-            </Link>
+            </NavLink>
          </div>
       </Container>
    );

@@ -23,7 +23,7 @@ const Mem = (props) => {
                gutterBottom
                variant="h5"
                component="div"
-               className="text-center"
+               className="text-center pt-2"
             >
                {title}
             </Typography>
