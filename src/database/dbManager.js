@@ -11,3 +11,13 @@ export async function getMems() {
 
     return mems;
 }
+
+export async function updateMem(mem) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(mem)
+    };
+
+    await fetch(`http://localhost:3000/mems/${mem.id}`, requestOptions);
+}

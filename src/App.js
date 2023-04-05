@@ -11,7 +11,7 @@ import {
 
 import MemList from "./components/common/MemList";
 import MainLayout from "./components/layout/MainLayout";
-import { getMems } from "./database/dbManager";
+import { getMems, updateMem } from "./database/dbManager";
 
 // const MEMS = [
 //    {
@@ -56,7 +56,10 @@ function App() {
    const handleUpClick = (id) => {
       setMems((prevMem) => {
          const upVotedMem = prevMem.map((mem) => {
-            if (mem.id === id) mem.upvotes++;
+            if (mem.id === id) {
+               mem.upvotes++;
+               updateMem(mem);
+            }
             return mem;
          });
 
@@ -67,7 +70,10 @@ function App() {
    const handleDownClick = (id) => {
       setMems((prevMem) => {
          const downVotedMem = prevMem.map((mem) => {
-            if (mem.id === id) mem.downvotes++;
+            if (mem.id === id) {
+               mem.downvotes++;
+               updateMem(mem);
+            }
             return mem;
          });
 

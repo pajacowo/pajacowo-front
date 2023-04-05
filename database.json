@@ -3,8 +3,8 @@
     {
       "id": 1,
       "title": "Kiedy zbliża się Wielkanoc",
-      "upvotes": 9,
-      "downvotes": 3,
+      "upvotes": 12,
+      "downvotes": 5,
       "img": "../img/mems/mem-1.jpg"
     },
     {
@@ -17,15 +17,15 @@
     {
       "id": 3,
       "title": "Architektura IT",
-      "upvotes": 15,
-      "downvotes": 4,
+      "upvotes": 16,
+      "downvotes": 5,
       "img": "../img/mems/mem-3.png"
     },
     {
       "id": 4,
       "title": "Gdy nieubłaganie zbliża się deadline",
-      "upvotes": 6,
-      "downvotes": 2,
+      "upvotes": 7,
+      "downvotes": 6,
       "img": "../img/mems/mem-4.jpg"
     }
   ]
