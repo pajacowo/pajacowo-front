@@ -1,30 +1,28 @@
 import React from "react";
-import { Grid, Fab } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+import { Grid } from "@mui/material";
 import LeftBar from "../common/LeftBar";
 import RightBar from "../common/RightBar";
 import NavBar from "../common/NavBar";
+import AddMem from "../common/AddMem";
 
 const MainLayout = (props) => {
-   return (
-      <div>
-         <NavBar />
-         <Grid container>
-            <Grid item xs={2} className="bg-gray-100">
-               <LeftBar />
-            </Grid>
-            <Grid item xs={8}>
-               {props.content}
-               <Fab className="fixed right-5 bottom-5 bg-yellow-400" aria-label="add">
-                  <AddIcon />
-               </Fab>
-            </Grid>
-            <Grid item xs={2} className="bg-gray-100">
-               <RightBar />
-            </Grid>
-         </Grid>
-      </div>
-   );
+  return (
+    <div className="h-full">
+      <NavBar />
+      <Grid container>
+        <Grid item xs={1} md={2} lg={2}>
+          <LeftBar />
+        </Grid>
+        <Grid item xs={11} md={10} lg={8}>
+          {props.content}
+          <AddMem />
+        </Grid>
+        <Grid item xs={0} md={0} lg={2}>
+          <RightBar />
+        </Grid>
+      </Grid>
+    </div>
+  );
 };
 
 export default MainLayout;

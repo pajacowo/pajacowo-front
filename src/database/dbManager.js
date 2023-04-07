@@ -19,5 +19,5 @@ export async function updateMem(mem) {
         body: JSON.stringify(mem)
     };
 
-    await fetch(`http://localhost:3000/mems/${mem.id}`, requestOptions);
+    await fetch(`${MEMS_URL}/${mem.id}`, requestOptions);
 }
