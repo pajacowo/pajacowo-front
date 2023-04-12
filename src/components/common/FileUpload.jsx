@@ -43,7 +43,7 @@ const FileUpload = (props) => {
 
   return (
     <div className="App">
-      <Typography variant="h4" className="pb-4 pt-6 text-center">
+      <Typography variant="h4" className="pb-4 pt-6 text-center font-prompt">
         Dodaj mema
       </Typography>
       <TextField

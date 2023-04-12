@@ -15,7 +15,7 @@ const NavBar = () => {
                className="text-white mr-5"
                size="2x"
             />
-            <Typography className="text-white">Memownia</Typography>
+            <Typography className="text-white font-sedgwick-ave text-3xl" >Memownia</Typography>
          </Toolbar>
       </AppBar>
    );

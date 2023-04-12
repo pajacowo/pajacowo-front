@@ -18,7 +18,7 @@ const LeftBar = () => {
             icon={faFireFlameCurved}
             className="mr-5 text-lg text-white md:text-black"
           />
-          <Typography className="hidden md:block">Hot</Typography>
+          <Typography className="hidden font-prompt md:block">Hot</Typography>
         </NavLink>
       </div>
       <div className="flex items-center mb-10 md:pl-5">
@@ -32,7 +32,7 @@ const LeftBar = () => {
             icon={faImage}
             className="mr-5 text-lg text-white md:text-black"
           />
-          <Typography className="hidden md:block">Regular</Typography>
+          <Typography className="hidden font-prompt md:block">Regular</Typography>
         </NavLink>
       </div>
     </Container>
