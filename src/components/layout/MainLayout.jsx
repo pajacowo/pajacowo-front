@@ -15,7 +15,7 @@ const MainLayout = (props) => {
         </Grid>
         <Grid item xs={11} md={10} lg={8}>
           {props.content}
-          <AddMem />
+          <AddMem reload={props.reload} />
         </Grid>
         <Grid item xs={0} md={0} lg={2}>
           <RightBar />

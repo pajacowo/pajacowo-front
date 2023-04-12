@@ -48,10 +48,17 @@ function App() {
    const [mems, setMems] = useState([]);
 
    useEffect(() => {
+      // getMems().then((mems) => {
+      //    setMems(mems);
+      // });
+      reloadMems();
+   }, []);
+
+   const reloadMems = () => {
       getMems().then((mems) => {
          setMems(mems);
       });
-   }, []);
+   }
 
    const handleUpClick = (id) => {
       setMems((prevMem) => {
@@ -89,6 +96,7 @@ function App() {
                path="/hot"
                element={
                   <MainLayout
+                     reload={reloadMems}
                      content={
                         <MemList
                            mems={mems}
@@ -104,6 +112,7 @@ function App() {
                path="/regular"
                element={
                   <MainLayout
+                     reload={reloadMems}
                      content={
                         <MemList
                            mems={mems}

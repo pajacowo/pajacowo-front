@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-import { Container, Fab, TextField } from "@mui/material";
+import { Container, Fab } from "@mui/material";
 import Modal from "@mui/material/Modal";
 import AddIcon from "@mui/icons-material/Add";
 
-const AddMem = () => {
+import FileUpload from "./FileUpload";
+
+const AddMem = (props) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -29,11 +31,8 @@ const AddMem = () => {
         onClose={handleClose}
         className="flex items-center justify-center h-screen"
       >
-        <Container className="h-96 w-96 bg-white">
-          <form className="py-5 px-3" autoComplete="off">
-            <label for="myfile">Select a file:</label>
-            <input type="file" id="myfile" name="myfile" />
-          </form>
+        <Container className="h-80 w-2/5 bg-white rounded-md">
+          <FileUpload reload={props.reload} close={handleClose} />
         </Container>
       </Modal>
     </>

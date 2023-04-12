@@ -21,3 +21,20 @@ export async function updateMem(mem) {
 
     await fetch(`${MEMS_URL}/${mem.id}`, requestOptions);
 }
+
+export async function addMem(title, filename) {
+    const mem = {
+        title,
+        "upvotes": 0,
+        "downvotes": 0,
+        "img": `../img/mems/${filename}`
+    }
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(mem)
+    };
+
+    await fetch(`${MEMS_URL}`, requestOptions);
+}
