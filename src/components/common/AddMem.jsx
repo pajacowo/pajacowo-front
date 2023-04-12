@@ -31,7 +31,7 @@ const AddMem = (props) => {
         onClose={handleClose}
         className="flex items-center justify-center h-screen"
       >
-        <Container className="h-80 w-2/5 bg-white rounded-md">
+        <Container className="h-full md:h-80 md:w-2/5 bg-white md:rounded-md">
           <FileUpload reload={props.reload} close={handleClose} />
         </Container>
       </Modal>

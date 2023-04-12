@@ -10,10 +10,10 @@ const MainLayout = (props) => {
     <div className="h-full">
       <NavBar />
       <Grid container>
-        <Grid item xs={1} md={2} lg={2}>
+        <Grid item xs={2} md={2} lg={2}>
           <LeftBar />
         </Grid>
-        <Grid item xs={11} md={10} lg={8}>
+        <Grid item xs={10} md={10} lg={8}>
           {props.content}
           <AddMem reload={props.reload} />
         </Grid>

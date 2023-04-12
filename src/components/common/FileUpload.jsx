@@ -43,7 +43,10 @@ const FileUpload = (props) => {
 
   return (
     <div className="App">
-      <Typography variant="h4" className="pb-4 pt-6 text-center font-prompt">
+      <Typography
+        variant="h4"
+        className="pb-4 pt-6 text-center font-prompt text-xl md:text-2xl"
+      >
         Dodaj mema
       </Typography>
       <TextField
@@ -54,16 +57,20 @@ const FileUpload = (props) => {
         value={title}
         onChange={saveTitle}
       />
-      <Box className="flex items-baseline justify-between">
+      <Box className="flex flex-col md:flex-row items-baseline justify-between">
         <TextField
           id="standard-basic"
           label=""
           variant="standard"
           disabled
-          className="mb-6 w-64 text-black"
+          className="mb-6 w-full md:w-64 text-black"
           value={fileName}
         />
-        <Button variant="contained" component="label">
+        <Button
+          variant="contained"
+          component="label"
+          className="w-full md:w-auto"
+        >
           Wybierz plik
           <input type="file" hidden onChange={saveFile} />
         </Button>
