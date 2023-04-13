@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 
-import { Alert, Container, Fab, Snackbar } from "@mui/material";
-import Modal from "@mui/material/Modal";
+import { Alert, Container, Fab, Snackbar, Modal } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
 import FileUpload from "./FileUpload";
 
 const AddMem = (props) => {
+  const AUTO_HIDE_DURATION = 2000;
+
   const [open, setOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
-
-  let vertical = "bottom",
-    horizontal = "center";
 
   const handleClick = () => {
     setOpen(true);
@@ -53,8 +51,8 @@ const AddMem = (props) => {
       </Modal>
       <Snackbar
         open={alertOpen}
-        autoHideDuration={2000}
-        anchorOrigin={{ vertical, horizontal }}
+        autoHideDuration={AUTO_HIDE_DURATION}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
         onClose={handleCloseAlert}
       >
         <Alert
