@@ -8,7 +8,7 @@ import { faMasksTheater } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = () => {
    return (
-      <AppBar  position="fixed" className="py-2 bg-Indigo-700">
+      <AppBar  position="fixed" className="py-3 bg-dark-blue">
          <Toolbar>
             <FontAwesomeIcon
                icon={faMasksTheater}

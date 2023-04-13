@@ -22,7 +22,7 @@ const MemList = (props) => {
   ));
 
   return (
-    <Container className="pt-28 flex flex-wrap justify-center overflow-auto">
+    <Container className="pt-28 flex flex-wrap justify-center">
       {mems.length > 0 ? mems : <EmptyList />}
     </Container>
   );

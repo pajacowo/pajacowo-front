@@ -63,13 +63,13 @@ const FileUpload = (props) => {
           label=""
           variant="standard"
           disabled
-          className="mb-6 w-full md:w-64 text-black"
+          className="mb-6 w-full md:pr-4 text-black"
           value={fileName}
         />
         <Button
           variant="contained"
           component="label"
-          className="w-full md:w-auto"
+          className="w-full md:w-48 bg-dark-blue"
         >
           Wybierz plik
           <input type="file" hidden onChange={saveFile} />
@@ -84,7 +84,7 @@ const FileUpload = (props) => {
         >
           Zapisz
         </Button>
-        <Button onClick={closeWindow} variant="outlined" className="mx-3">
+        <Button onClick={closeWindow} variant="outlined" className="mx-3 border-dark-blue">
           Anuluj
         </Button>
       </Box>

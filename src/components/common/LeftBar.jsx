@@ -6,7 +6,7 @@ import { faFireFlameCurved, faImage } from "@fortawesome/free-solid-svg-icons";
 
 const LeftBar = () => {
   return (
-    <Container className="pt-28 h-screen sticky top-0 bg-black md:bg-gray-100">
+    <Container className="pt-28 md:pt-32 h-screen sticky top-0 bg-light-blue md:bg-gray-100">
       <div className="flex items-center justify-center mb-10 md:justify-start md:pl-5">
         <NavLink
           to="/hot"

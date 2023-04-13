@@ -20,7 +20,7 @@ const AddMem = (props) => {
   return (
     <>
       <Fab
-        className="fixed right-5 bottom-5 bg-yellow-400"
+        className="fixed right-5 bottom-5 bg-light-green"
         aria-label="add"
         onClick={handleClick}
       >
