@@ -6,7 +6,7 @@ import { addMem } from "../../database/dbManager";
 const FileUpload = (props) => {
   const MEMS_URL = "http://localhost:3001/upload";
 
-  const { reload: reloadMems, close: closePopup } = props;
+  const { reload: reloadMems, close: closePopup, openAlert } = props;
 
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
@@ -35,6 +35,7 @@ const FileUpload = (props) => {
 
       await addMem(title, fileName);
       reloadMems();
+      openAlert();
       closePopup();
     } catch (ex) {
       console.log(ex);
@@ -84,7 +85,11 @@ const FileUpload = (props) => {
         >
           Zapisz
         </Button>
-        <Button onClick={closeWindow} variant="outlined" className="mx-3 border-dark-blue">
+        <Button
+          onClick={closeWindow}
+          variant="outlined"
+          className="mx-3 border-dark-blue"
+        >
           Anuluj
         </Button>
       </Box>
