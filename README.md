@@ -14,7 +14,7 @@ Aby uruchomić aplikację z poziomu projektu należy uruchomić:
 
 ### `npm run start:app`
 
-Polecenie uruchamia aplikację pod adresem [http://localhost:3009](http://localhost:3009). Adres należy otworzyć w przeglądarce.
+Polecenie uruchamia aplikację pod adresem [http://localhost:8080](http://localhost:8080). Adres należy otworzyć w przeglądarce.
 
 ### `npm run start:db`
 

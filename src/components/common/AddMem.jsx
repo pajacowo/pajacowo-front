@@ -30,7 +30,7 @@ const AddMem = (props) => {
   return (
     <>
       <Fab
-        className="fixed right-5 bottom-5 bg-light-green"
+        className="fixed right-5 bottom-5 bg-light-green hover:bg-light-blue"
         aria-label="add"
         onClick={handleClick}
       >
@@ -60,7 +60,7 @@ const AddMem = (props) => {
           onClose={handleCloseAlert}
           className="mt-20 bg-light-green w-96"
         >
-          Mem został dodany do sekcji REGULAR
+          Mem został dodany do sekcji REGULAR.
         </Alert>
       </Snackbar>
     </>
