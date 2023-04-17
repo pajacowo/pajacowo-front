@@ -1,9 +1,9 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import LeftBar from "../common/LeftBar";
-import RightBar from "../common/RightBar";
-import NavBar from "../common/NavBar";
-import AddMem from "../common/AddMem";
+import LeftBar from "./LeftBar";
+import RightBar from "./RightBar";
+import NavBar from "./NavBar";
+import AddMem from "./AddMem";
 
 const MainLayout = (props) => {
   return (

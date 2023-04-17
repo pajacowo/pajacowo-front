@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { TextField, Typography, Button, Box } from "@mui/material";
-import { addMem } from "../../database/dbManager";
+import { addMem } from "../database/dbManager";
 
 const FileUpload = (props) => {
   const MEMS_URL = "http://localhost:3001/upload";

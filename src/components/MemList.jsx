@@ -2,7 +2,7 @@ import { Container } from "@mui/system";
 import React from "react";
 
 import Mem from "./Mem";
-import EmptyList from "../layout/EmptyList";
+import EmptyList from "./EmptyList";
 
 const MemList = (props) => {
   const filteredList = props.mems.filter((mem) => {

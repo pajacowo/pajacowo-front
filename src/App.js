@@ -9,10 +9,10 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import MemList from "./components/common/MemList";
-import MainLayout from "./components/layout/MainLayout";
+import MemList from "./components/MemList";
+import MainLayout from "./components/MainLayout";
 import { getMems, updateMem } from "./database/dbManager";
-import Loading from "./components/layout/Loading";
+import Loading from "./components/Loading";
 
 function App() {
   const [mems, setMems] = useState([]);
