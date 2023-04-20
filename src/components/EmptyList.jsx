@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material";
 import React from "react";
 
-const EmptyList = () => {
-  return <Typography>Wybrana kategoria nie zawiera elementów</Typography>;
+const EmptyList = ({text}) => {
+  return <Typography>{text}</Typography>;
 };
 
 export default EmptyList;

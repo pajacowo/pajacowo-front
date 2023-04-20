@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-
 import { Alert, Container, Fab, Snackbar, Modal } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-
 import FileUpload from "./FileUpload";
+import { AUTO_HIDE_DURATION } from "./consts";
 
 const AddMem = (props) => {
-  const AUTO_HIDE_DURATION = 2000;
-
   const [open, setOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
 

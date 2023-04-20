@@ -1,12 +1,16 @@
 import React from "react";
-import { Container, Typography } from "@mui/material";
+import { CircularProgress } from "@mui/material";
+import { useIsFetching, useIsMutating } from "@tanstack/react-query";
 
 const Loading = () => {
-  return (
-    <Container className="pt-28 flex flex-wrap justify-center">
-      <Typography>Ładowanie danych ...</Typography>
-    </Container>
-  );
+  const isFetching = useIsFetching();
+  const isMutating = useIsMutating();
+
+  const classes = `fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
+    isFetching || isMutating || "hidden"
+  }`;
+
+  return <CircularProgress className={classes} />;
 };
 
 export default Loading;

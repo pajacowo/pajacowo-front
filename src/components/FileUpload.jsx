@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { TextField, Typography, Button, Box } from "@mui/material";
-import { addMem } from "../database/dbManager";
+
+import { useAddMem } from "../hooks/useAddMem";
+import { useUploadFile } from "../hooks/useUploadFile";
 
 const FileUpload = (props) => {
-  const MEMS_URL = "http://localhost:3001/upload";
+  const addMem = useAddMem();
+  const uploadFile = useUploadFile();
 
-  const { reload: reloadMems, close: closePopup, openAlert } = props;
+  const { close: closePopup, openAlert } = props;
 
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
@@ -25,21 +27,18 @@ const FileUpload = (props) => {
     setTitle(e.target.value);
   };
 
-  const uploadFile = async (e) => {
+  const handleUploadClick = async (e) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("fileName", fileName);
 
-    try {
-      await axios.post(MEMS_URL, formData);
+    console.log("FU: ", fileName, file);
 
-      await addMem(title, fileName);
-      reloadMems();
-      openAlert();
-      closePopup();
-    } catch (ex) {
-      console.log(ex);
-    }
+    await uploadFile(formData);
+    await addMem({ title, fileName });
+
+    openAlert();
+    closePopup();
   };
 
   return (
@@ -78,7 +77,7 @@ const FileUpload = (props) => {
       </Box>
       <Box className="flex justify-center mt-10">
         <Button
-          onClick={uploadFile}
+          onClick={handleUploadClick}
           variant="outlined"
           className="mx-3"
           disabled={!(file && title)}

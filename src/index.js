@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "../src/react-query/queryClient";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -13,7 +15,9 @@ root.render(
    <React.StrictMode>
       <StyledEngineProvider injectFirst>
          <ThemeProvider theme={theme}>
-            <App />
+            <QueryClientProvider client={queryClient}>
+               <App />
+            </QueryClientProvider>
          </ThemeProvider>
       </StyledEngineProvider>
    </React.StrictMode>

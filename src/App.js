@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-
 import "./App.css";
 
 import {
@@ -11,52 +9,16 @@ import {
 
 import MemList from "./components/MemList";
 import MainLayout from "./components/MainLayout";
-import { getMems, updateMem } from "./database/dbManager";
-import Loading from "./components/Loading";
+import { useMems } from './hooks/useMems';
+
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import EmptyList from "./components/EmptyList";
+import { memsCategory } from "./react-query/consts";
+
 
 function App() {
-  const [mems, setMems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    reloadMems();
-  }, []);
-
-  const reloadMems = () => {
-    setIsLoading(true);
-    getMems().then((mems) => {
-      setMems(mems);
-      setIsLoading(false);
-    });
-  };
-
-  const handleUpClick = (id) => {
-    setMems((prevMem) => {
-      const upVotedMem = prevMem.map((mem) => {
-        if (mem.id === id) {
-          mem.upvotes++;
-          updateMem(mem);
-        }
-        return mem;
-      });
-
-      return upVotedMem;
-    });
-  };
-
-  const handleDownClick = (id) => {
-    setMems((prevMem) => {
-      const downVotedMem = prevMem.map((mem) => {
-        if (mem.id === id) {
-          mem.downvotes++;
-          updateMem(mem);
-        }
-        return mem;
-      });
-
-      return downVotedMem;
-    });
-  };
+  const regularMems = useMems(memsCategory.REGULAR);
+  const hotMems = useMems(memsCategory.HOT);
 
   return (
     <Router>
@@ -66,15 +28,12 @@ function App() {
           path="/hot"
           element={
             <MainLayout
-              reload={reloadMems}
               content={
-                isLoading ? (
-                  <Loading />
+                hotMems.length === 0 ? (
+                  <EmptyList text="" />
                 ) : (
                   <MemList
-                    mems={mems}
-                    onUpClick={handleUpClick}
-                    onDownClick={handleDownClick}
+                    mems={hotMems}
                     hot={true}
                   />
                 )
@@ -86,15 +45,12 @@ function App() {
           path="/regular"
           element={
             <MainLayout
-              reload={reloadMems}
               content={
-                isLoading ? (
-                  <Loading />
+                regularMems.length === 0 ? (
+                  <EmptyList text="" />
                 ) : (
                   <MemList
-                    mems={mems}
-                    onUpClick={handleUpClick}
-                    onDownClick={handleDownClick}
+                    mems={regularMems}
                     hot={false}
                   />
                 )
@@ -103,6 +59,7 @@ function App() {
           }
         />
       </Routes>
+      <ReactQueryDevtools />
     </Router>
   );
 }
