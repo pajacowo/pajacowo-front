@@ -3,12 +3,14 @@ import { TextField, Typography, Button, Box } from "@mui/material";
 
 import { useAddMem } from "../hooks/useAddMem";
 import { useUploadFile } from "../hooks/useUploadFile";
+import { useToast } from "../hooks/useToast";
 
 const FileUpload = (props) => {
   const addMem = useAddMem();
   const uploadFile = useUploadFile();
+  const toast = useToast();
 
-  const { close: closePopup, openAlert } = props;
+  const { close: closePopup } = props;
 
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
@@ -32,12 +34,10 @@ const FileUpload = (props) => {
     formData.append("file", file);
     formData.append("fileName", fileName);
 
-    console.log("FU: ", fileName, file);
-
     await uploadFile(formData);
     await addMem({ title, fileName });
 
-    openAlert();
+    toast({ text: "Mem został dodany do sekcji REGULAR.", type: "success" });
     closePopup();
   };
 

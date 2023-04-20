@@ -7,6 +7,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material";
 import { theme } from "./config/theme";
+import ToastProvider from './toast/ToastProvider';
 
 document.body.classList = 'bg-gray-100';
 
@@ -16,7 +17,9 @@ root.render(
       <StyledEngineProvider injectFirst>
          <ThemeProvider theme={theme}>
             <QueryClientProvider client={queryClient}>
-               <App />
+               <ToastProvider>
+                  <App />
+               </ToastProvider>
             </QueryClientProvider>
          </ThemeProvider>
       </StyledEngineProvider>

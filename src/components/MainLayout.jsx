@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "@mui/material";
-// import { Box, CircularProgress } from "@mui/material";
 import LeftBar from "./LeftBar";
 import RightBar from "./RightBar";
 import NavBar from "./NavBar";
