@@ -4,10 +4,11 @@ import LeftBar from "./LeftBar";
 import RightBar from "./RightBar";
 import NavBar from "./NavBar";
 import AddMem from "./AddMem";
+import Loading from "./Loading";
 
 const MainLayout = (props) => {
   return (
-    <div className="h-full">
+    <div className="h-full relative">
       <NavBar />
       <Grid container>
         <Grid item xs={2} md={2} lg={2}>
@@ -15,12 +16,13 @@ const MainLayout = (props) => {
         </Grid>
         <Grid item xs={10} md={10} lg={8}>
           {props.content}
-          <AddMem reload={props.reload} />
+          <AddMem />
         </Grid>
         <Grid item xs={0} md={0} lg={2}>
           <RightBar />
         </Grid>
       </Grid>
+      <Loading />
     </div>
   );
 };

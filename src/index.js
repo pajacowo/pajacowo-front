@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "../src/react-query/queryClient";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { StyledEngineProvider, ThemeProvider } from "@mui/material";
 import { theme } from "./config/theme";
+import ToastProvider from './toast/ToastProvider';
 
 document.body.classList = 'bg-gray-100';
 
@@ -13,7 +16,11 @@ root.render(
    <React.StrictMode>
       <StyledEngineProvider injectFirst>
          <ThemeProvider theme={theme}>
-            <App />
+            <QueryClientProvider client={queryClient}>
+               <ToastProvider>
+                  <App />
+               </ToastProvider>
+            </QueryClientProvider>
          </ThemeProvider>
       </StyledEngineProvider>
    </React.StrictMode>

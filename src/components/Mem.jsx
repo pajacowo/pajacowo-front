@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
-
+import { useModifyMemVote } from "../hooks/useModifyMemVote";
 import {
   Button,
   Card,
@@ -12,7 +12,28 @@ import {
 import React from "react";
 
 const Mem = (props) => {
-  const { title, upvotes, downvotes, img, id } = props.mem;
+  const { mem } = props;
+  const { title, upvotes, downvotes, img } = mem;
+
+  const modifyMemVote = useModifyMemVote();
+
+  const handleUpClick = () => {
+    const updatedMem = {
+      ...mem,
+      upvotes: mem.upvotes + 1,
+    };
+
+    modifyMemVote(updatedMem);
+  };
+
+  const handleDownClick = () => {
+    const updatedMem = {
+      ...mem,
+      downvotes: mem.downvotes + 1,
+    };
+
+    modifyMemVote(updatedMem);
+  };
 
   return (
     <Card className="mb-6 text-black" sx={{ maxWidth: 650 }}>
@@ -39,7 +60,7 @@ const Mem = (props) => {
           <Button
             size="small"
             className="flex items-center"
-            onClick={() => props.onUpClick(id)}
+            onClick={handleUpClick}
           >
             <FontAwesomeIcon
               icon={faThumbsUp}
@@ -53,7 +74,7 @@ const Mem = (props) => {
           <Button
             size="small"
             className="flex items-center"
-            onClick={() => props.onDownClick(id)}
+            onClick={handleDownClick}
           >
             <FontAwesomeIcon
               icon={faThumbsDown}

@@ -3,6 +3,7 @@ Projekt powstał jako praca zaliczeniowa z przedmiotu "Programowanie w React" na
 
 ## Użyte technologie
 Projekt został zbudowany w oparciu o [Create React App](https://github.com/facebook/create-react-app). W projekcie użyte zostały:
+* React Query
 * Material UI
 * Tailwind CSS
 * Fontawsome
