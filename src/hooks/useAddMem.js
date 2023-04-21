@@ -19,7 +19,6 @@ const addMem = async ({ title, fileName }) => {
     };
 
     await fetch(`${MEMS_URL}`, requestOptions);
-    console.log('useAddMem ', mem);
 }
 
 export const useAddMem = () => {
@@ -27,6 +26,8 @@ export const useAddMem = () => {
     const { mutate } = useMutation((mem) => addMem(mem), {
         onSuccess: () => {
             queryClient.invalidateQueries([queryKeys.mems]);
+            const errorMessage = { text: "Mem został dodany do sekcji REGULAR.", type: "success" };
+            toast(errorMessage);
         },
         onError: () => {
             const errorMessage = { text: "Connection error.", type: 'error' };

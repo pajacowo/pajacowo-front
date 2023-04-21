@@ -1,20 +1,16 @@
 import React, { useState } from "react";
 import { TextField, Typography, Button, Box } from "@mui/material";
-
 import { useAddMem } from "../hooks/useAddMem";
 import { useUploadFile } from "../hooks/useUploadFile";
-import { useToast } from "../hooks/useToast";
 
 const FileUpload = (props) => {
-  const addMem = useAddMem();
-  const uploadFile = useUploadFile();
-  const toast = useToast();
-
-  const { close: closePopup } = props;
-
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
   const [title, setTitle] = useState("");
+  const addMem = useAddMem();
+  const uploadFile = useUploadFile();
+
+  const { close: closePopup } = props;
 
   const saveFile = (e) => {
     setFile(e.target.files[0]);
@@ -37,7 +33,6 @@ const FileUpload = (props) => {
     await uploadFile(formData);
     await addMem({ title, fileName });
 
-    toast({ text: "Mem został dodany do sekcji REGULAR.", type: "success" });
     closePopup();
   };
 

@@ -11,7 +11,7 @@ import MemList from "./components/MemList";
 import MainLayout from "./components/MainLayout";
 import { useMems } from './hooks/useMems';
 
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import EmptyList from "./components/EmptyList";
 import { memsCategory } from "./react-query/consts";
 
@@ -59,7 +59,7 @@ function App() {
           }
         />
       </Routes>
-      <ReactQueryDevtools />
+      {/* <ReactQueryDevtools /> */}
     </Router>
   );
 }
