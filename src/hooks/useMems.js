@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useCallback } from "react";
-import { MEMS_URL } from "./consts";
+//import { MEMS_URL } from "./consts";
 import { queryKeys } from "../react-query/consts";
 import { filterMems } from "./utils";
 import { useToast } from "./useToast";
