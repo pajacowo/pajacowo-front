@@ -33,4 +33,5 @@ jobs:
         server: ftp.h5765324.hostingrd.pl
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
+        dangerous-clean-slate: true
         local-dir: ./build/
