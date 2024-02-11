@@ -13,7 +13,7 @@ const NavBar = () => {
           size="2x"
         />
         <Typography className="text-white font-sedgwick-ave text-3xl">
-          Pajacowo.pl
+          Pajacowo.pl (test)
         </Typography>
       </Toolbar>
     </AppBar>
