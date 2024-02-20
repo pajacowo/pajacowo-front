@@ -30,7 +30,7 @@ const FileUpload = (props) => {
     formData.append("file", file);
     formData.append("fileName", fileName);
 
-    await uploadFile(formData);
+    //await uploadFile(formData);
     await addMem({ title, fileName });
 
     closePopup();

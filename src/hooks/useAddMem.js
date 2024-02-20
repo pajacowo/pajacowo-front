@@ -1,12 +1,13 @@
 import { useMutation } from "@tanstack/react-query";
 import { queryClient } from '../react-query/queryClient';
 import { queryKeys } from '../react-query/consts';
-import { MEMS_URL } from './consts';
+//import { MEMS_URL } from './consts';
 import { useToast } from "./useToast";
 
 const addMem = async ({ title, fileName }) => {
     const mem = {
         title,
+        "description": "",
         "upvotes": 0,
         "downvotes": 0,
         "img": `../img/mems/${fileName}`
@@ -18,7 +19,7 @@ const addMem = async ({ title, fileName }) => {
         body: JSON.stringify(mem)
     };
 
-    await fetch(`${MEMS_URL}`, requestOptions);
+    await fetch(`${process.env.REACT_APP_MEMS_URL}`, requestOptions);
 }
 
 export const useAddMem = () => {
